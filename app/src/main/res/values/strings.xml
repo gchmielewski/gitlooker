@@ -1,0 +1,7 @@
+<resources>
+  <string name="app_name">GitLooker</string>
+  <string name="login_name">Login</string>
+  <string name="password">Password</string>
+  <string name="login_button">Login</string>
+  <string name="action_login">Login</string>
+</resources>
