@@ -31,110 +31,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a99e52f1-c0ee-419f-930c-294abab21dc0" name="Default" comment="Others files">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/utils/Authorization.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/service/GitHubService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/service/GitLookerDataModule.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/service/GitLookerSQLiteOpenHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/model/Owner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/model/Permissions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/model/Repo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/service/RepoContent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/view/RepoFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/view/ReposFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/service/RepositoryRecyclerViewAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/model/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/utils/Utils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/converter_gson_2_0_0_beta2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_login.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_repo.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_repo.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_repos.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_repos_list.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_repos_list.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/prompts.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/repo_menu.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/repos_menu.xml" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\mediarouter_v7_23_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_ads_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_analytics_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_appindexing_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_appinvite_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_appstate_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_auth_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_base_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_basement_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_cast_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_drive_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_fitness_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_games_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_gcm_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_identity_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_location_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_maps_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_measurement_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_nearby_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_panorama_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_plus_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_safetynet_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_vision_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_wallet_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\.idea\libraries\play_services_wearable_8_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\java\com\example\gitlooker\RepositoryListFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\java\com\example\gitlooker\Utils.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\check_all.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\decrease.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\delete.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\fat_stain.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\icon.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\increase.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\manual.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\recycle_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\river.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\sea.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\send.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\settings.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\uncheck.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-hdpi\version.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-mdpi\check_all.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-mdpi\decrease.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-mdpi\delete.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-mdpi\increase.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-mdpi\manual.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-mdpi\river.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-mdpi\sea.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-mdpi\send.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-mdpi\settings.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-mdpi\uncheck.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-xhdpi\cancel.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-xhdpi\check_all.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-xhdpi\decrease.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-xhdpi\delete.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-xhdpi\increase.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-xhdpi\manual.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-xhdpi\ok.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-xhdpi\send.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-xhdpi\settings.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-xhdpi\start.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-xhdpi\title.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-xhdpi\title2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\drawable-xhdpi\uncheck.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\res\layout\fragment_repository_list.xml" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\java\com\example\gitlooker\BaseFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/view/BaseFragment.java" />
-      <change type="MOVED" beforePath="C:\Users\grzesiek\Documents\GitHub\gitlooker\app\src\main\java\com\example\gitlooker\LoginFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/view/LoginFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gitlooker/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/main_menu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+    <list default="true" id="a99e52f1-c0ee-419f-930c-294abab21dc0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GitLooker.iws" />
@@ -2598,7 +2495,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451415815796</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Others files">
+      <created>1451937201718</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1451937201718</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
