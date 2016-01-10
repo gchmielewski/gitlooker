@@ -16,6 +16,7 @@ import com.example.gitlooker.service.GitHubService;
 import com.example.gitlooker.service.GitLookerDataModule;
 import com.example.gitlooker.utils.Authorization;
 import com.example.gitlooker.utils.SearchList;
+import com.example.gitlooker.utils.Utils;
 import com.example.gitlooker.view.LoginFragment;
 import com.example.gitlooker.view.RepoFragment;
 import com.example.gitlooker.view.ReposFragment;
@@ -69,34 +70,41 @@ public class MainActivity extends AppCompatActivity implements ReposFragment.OnL
             EditText edtLogin = (EditText) findViewById(R.id.edtLogin);
             EditText edtPassword = (EditText) findViewById(R.id.edtPassword);
 
-            if (edtLogin != null && edtPassword != null) {
-                final ProgressDialog progressDialog = ProgressDialog.show(MainActivity.this, "Please wait", "Checking", true, false);
+            if (Utils.haveNetworkConnection(this)) {
+                if (edtLogin != null && edtPassword != null) {
+                    final ProgressDialog progressDialog = ProgressDialog.show(MainActivity.this, "Please wait", "Checking", true, false);
 
-                Authorization.getInstance().setAuthorization(edtLogin.getText().toString(), edtPassword.getText().toString());
-                GitHubService service = Authorization.getInstance().getGitService();
-                Call c = service.isStarred("gchmielewski", "gitlooker");
-                c.enqueue(new Callback() {
+                    Authorization.getInstance().setAuthorization(edtLogin.getText().toString(), edtPassword.getText().toString());
+                    GitHubService service = Authorization.getInstance().getGitService();
+                    Call c = service.isStarred("gchmielewski", "gitlooker");
+                    c.enqueue(new Callback() {
 
-                    @Override public void onResponse(Response response, Retrofit retrofit) {
-                        progressDialog.dismiss();
+                        @Override
+                        public void onResponse(Response response, Retrofit retrofit) {
+                            progressDialog.dismiss();
 
-                        if (response.code() != 401) {
-                            final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                            ft.replace(R.id.fragment_container, new ReposFragment(), REPO_LIST);
-                            ft.commit();
+                            if (response.code() != 401) {
+                                final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                                ft.replace(R.id.fragment_container, new ReposFragment(), REPO_LIST);
+                                ft.commit();
+                            }
+                            else {
+                                Toast.makeText(MainActivity.this, "Login error", Toast.LENGTH_LONG).show();
+                            }
                         }
-                        else {
-                            Toast.makeText(MainActivity.this, "Login error", Toast.LENGTH_LONG).show();
-                        }
-                    }
 
-                    @Override public void onFailure(Throwable t) {
-                        progressDialog.dismiss();
-                    }
-                });
+                        @Override
+                        public void onFailure(Throwable t) {
+                            progressDialog.dismiss();
+                        }
+                    });
+                }
+                else {
+                    Toast.makeText(this, "Login and password can't be empty", Toast.LENGTH_LONG).show();
+                }
             }
             else {
-                Toast.makeText(this, "Login and password can't be empty", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "You are offline", Toast.LENGTH_LONG).show();
             }
         }
     }
