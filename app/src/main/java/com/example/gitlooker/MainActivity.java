@@ -13,7 +13,9 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 import com.example.gitlooker.model.Repo;
 import com.example.gitlooker.service.GitHubService;
+import com.example.gitlooker.service.GitLookerDataModule;
 import com.example.gitlooker.utils.Authorization;
+import com.example.gitlooker.utils.SearchList;
 import com.example.gitlooker.view.LoginFragment;
 import com.example.gitlooker.view.RepoFragment;
 import com.example.gitlooker.view.ReposFragment;
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements ReposFragment.OnL
                 ft.replace(R.id.fragment_container, new LoginFragment(), LOGIN_TAG);
                 ft.commit();
             }
+            SearchList.getInstance().addAll(new GitLookerDataModule(this).getSearchWords());
         }
     }
 

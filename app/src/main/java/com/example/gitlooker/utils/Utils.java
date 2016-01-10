@@ -59,10 +59,11 @@ public class Utils {
 
     }
 
-    public static void showInput(String promptText, Context context, DialogInterface.OnClickListener OnOkClick) {
+    public static void showInput(String promptText, Integer typeText, Context context, DialogInterface.OnClickListener OnOkClick) {
         // get prompts.xml view
         LayoutInflater li = LayoutInflater.from(context);
         View promptsView = li.inflate(R.layout.prompts, null);
+
 
         android.support.v7.app.AlertDialog.Builder alertDialogBuilder = new android.support.v7.app.AlertDialog.Builder(context);
 
@@ -72,11 +73,24 @@ public class Utils {
         userInput = (AutoCompleteTextView) promptsView.findViewById(R.id.autoCompleteTextView);
         searchType = (RadioGroup) promptsView.findViewById(R.id.radioGroup);
 
-        ((TextView) promptsView.findViewById(R.id.txtPrompt)).setText(promptText);
+        ((TextView) promptsView.findViewById(R.id.txtPrompt)).setText("Search word");
+
+        switch (typeText) {
+            case REPO_SEARCH:
+                searchType.check(R.id.radioRepo);
+                break;
+
+            case OWNER_SEARCH:
+                searchType.check(R.id.radioOwner);
+                break;
+        }
+
 
         ArrayAdapter adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, SearchList.getInstance());
         userInput.setAdapter(adapter);
         userInput.setThreshold(1);
+        userInput.setText(promptText);
+        userInput.setSelectAllOnFocus(true);
 
         // set dialog message
         alertDialogBuilder.setCancelable(false).setPositiveButton("OK", OnOkClick).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

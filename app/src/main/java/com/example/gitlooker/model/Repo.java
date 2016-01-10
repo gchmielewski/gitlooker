@@ -7,6 +7,7 @@ import java.util.Map;
 public class Repo {
 
     public int id;
+    public int search_id;
     public Owner owner;
     public String name;
     public String full_name;
@@ -32,7 +33,6 @@ public class Repo {
     public String updated_at;
     public Permissions permissions;
     public boolean Starred;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     public boolean Watched;
 
     public Repo(int id, String name, String description) {
@@ -43,11 +43,12 @@ public class Repo {
         this.watchers_count = 2;
     }
 
-    public Repo(int id, String name, String avatarUrl, String login, int _private, String description, int stargazersCount, int watchersCount) {
+    public Repo(int id, String name, String avatarUrl, String login, int _private, String description, int stargazersCount, int watchersCount, int searchId) {
         this.id = id;
+        this.search_id = searchId;
         this.name = name;
         this.description = description;
-        this._private = _private == 1? true: false;
+        this._private = _private == 1;
         this.stargazers_count = stargazersCount;
         this.watchers_count = watchersCount;
 
@@ -55,13 +56,4 @@ public class Repo {
         this.owner.login = login;
         this.owner.avatar_url = avatarUrl;
     }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
 }

@@ -53,7 +53,9 @@ public class ReposFragment extends BaseFragment {
     private ProgressBar mProgress = null;
     private TextView mUserName = null;
     private TextView mSessionInfo = null;
-    private String mLastUser = null;
+
+    private String mLastSearchText = null;
+    private Integer mLastSearchType = null;
 
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
@@ -108,8 +110,10 @@ public class ReposFragment extends BaseFragment {
         return view;
     }
 
-    private void getOwnerRepositories(String repoOwner) {
-        mLastUser = repoOwner;
+    private void getOwnerRepositories(final String repoOwner) {
+        mLastSearchText = repoOwner;
+        mLastSearchType = Utils.OWNER_SEARCH;
+
         RepoContent.clearRepos();
 
         mUserName.setText("User's repositories : " + repoOwner);
@@ -145,10 +149,10 @@ public class ReposFragment extends BaseFragment {
 
                         String link = response.headers().get("Link");
                         if (isNextLink(link)) {
-                            getOwnerRepositoriesNext(link, dm);
+                            getOwnerRepositoriesNext(link, dm, repoOwner);
                         }
                         else {
-                            dm.saveRepos(RepoContent.ITEMS, mLastUser);
+                            dm.saveRepos(RepoContent.ITEMS, Utils.OWNER_SEARCH, repoOwner);
                         }
                     }
                 }
@@ -160,11 +164,11 @@ public class ReposFragment extends BaseFragment {
             });
         }
         else {
-            getDataFromSQLLite(); //offline - database
+            getDataFromSQLLite(Utils.OWNER_SEARCH, repoOwner); //offline - database
         }
     }
 
-    private void getOwnerRepositoriesNext(String link, final GitLookerDataModule dm) {
+    private void getOwnerRepositoriesNext(String link, final GitLookerDataModule dm, final String searchText) {
 
         Retrofit retrofit = new Retrofit.Builder().baseUrl(Authorization.BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
 
@@ -192,10 +196,10 @@ public class ReposFragment extends BaseFragment {
 
                 String link = response.headers().get("Link");
                 if (isNextLink(link)) {
-                    getOwnerRepositoriesNext(link, dm);
+                    getOwnerRepositoriesNext(link, dm, searchText);
                 }
                 else {
-                    dm.saveRepos(RepoContent.ITEMS, mLastUser);
+                    dm.saveRepos(RepoContent.ITEMS, Utils.OWNER_SEARCH, searchText);
                 }
             }
 
@@ -205,10 +209,12 @@ public class ReposFragment extends BaseFragment {
         });
     }
 
-    private void getSearchedRepositories(String searchWord) {
+    private void getSearchedRepositories(final String searchWord) {
         RepoContent.clearRepos();
         mUserName.setText("Repositories : " + searchWord);
         mAwatar.setImageResource(android.R.drawable.ic_dialog_info);
+        mLastSearchText = searchWord;
+        mLastSearchType = Utils.REPO_SEARCH;
 
         mProgress.setVisibility(View.VISIBLE);
         mSessionInfo.setVisibility(View.INVISIBLE);
@@ -239,10 +245,10 @@ public class ReposFragment extends BaseFragment {
 
                         String link = response.headers().get("Link");
                         if (isNextLink(link)) {
-                            getSearchedRepositoriesNext(link, dm);
+                            getSearchedRepositoriesNext(link, dm, searchWord);
                         }
                         else {
-                            dm.saveRepos(RepoContent.ITEMS, mLastUser);
+                            dm.saveRepos(RepoContent.ITEMS, Utils.REPO_SEARCH, searchWord);
                         }
                     }
                 }
@@ -254,12 +260,12 @@ public class ReposFragment extends BaseFragment {
             });
         }
         else {
-            getDataFromSQLLite(); //offline - database
+            getDataFromSQLLite(Utils.REPO_SEARCH, searchWord); //offline - database
         }
 
     }
 
-    private void getSearchedRepositoriesNext(String link, final GitLookerDataModule dm) {
+    private void getSearchedRepositoriesNext(String link, final GitLookerDataModule dm, final String searchWord) {
 
         Retrofit retrofit = new Retrofit.Builder().baseUrl(Authorization.BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
 
@@ -288,10 +294,10 @@ public class ReposFragment extends BaseFragment {
 
                 String link = response.headers().get("Link");
                 if (isNextLink(link)) {
-                    getSearchedRepositoriesNext(link, dm);
+                    getSearchedRepositoriesNext(link, dm, searchWord);
                 }
                 else {
-                    dm.saveRepos(RepoContent.ITEMS, mLastUser);
+                    dm.saveRepos(RepoContent.ITEMS, Utils.REPO_SEARCH, searchWord);
                 }
             }
 
@@ -314,7 +320,16 @@ public class ReposFragment extends BaseFragment {
         int id = item.getItemId();
 
         if (id == R.id.action_refresh) {
-            getOwnerRepositories(mLastUser);
+            switch (mLastSearchType) {
+                case Utils.REPO_SEARCH:
+                    getSearchedRepositories(mLastSearchText);
+                    break;
+
+                case Utils.OWNER_SEARCH:
+                    getOwnerRepositories(mLastSearchText);
+                    break;
+            }
+
             return true;
         }
 
@@ -327,7 +342,7 @@ public class ReposFragment extends BaseFragment {
     }
 
     private void search() {
-        Utils.showInput("Type repo's owner", getActivity(), new DialogInterface.OnClickListener() {
+        Utils.showInput(mLastSearchText, mLastSearchType, getActivity(), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 String searchString = Utils.getUserText();
 
@@ -377,12 +392,18 @@ public class ReposFragment extends BaseFragment {
         void onListFragmentInteraction(Repo item);
     }
 
-    private void getDataFromSQLLite() {
+    private void getDataFromSQLLite(int type, String searchText) {
 
         GitLookerDataModule dm = new GitLookerDataModule(getActivity());
 
-        RepoContent.addRepoList(dm.getRepos());
-        mSessionInfo.setText(dm.getSessionInfo(mLastUser));
+        RepoContent.addRepoList(dm.getRepos(type, searchText));
+
+        if (RepoContent.ITEMS.size() > 0) {
+            mSessionInfo.setText(dm.getSessionInfo(RepoContent.ITEMS.get(0).search_id));
+        }
+        else {
+            mSessionInfo.setText("No session");
+        }
 
         mProgress.setVisibility(View.GONE);
         mSessionInfo.setVisibility(View.VISIBLE);
