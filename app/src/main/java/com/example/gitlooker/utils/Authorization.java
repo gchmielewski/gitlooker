@@ -11,7 +11,7 @@ import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
 
 /**
- * Created by grzesiek on 2015-12-30.
+ * Created by grzesiek on 2015-12-30a
  */
 public class Authorization {
 
@@ -25,7 +25,7 @@ public class Authorization {
   }
 
   public String getLoginName() {
-    return mLoginName;
+    return mLoginName.trim();
   }
 
   public String getPassword() {

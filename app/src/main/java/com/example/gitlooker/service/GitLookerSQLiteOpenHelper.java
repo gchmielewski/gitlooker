@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Created by grzesiek on 2016-01-02.
+ * Created by grzesiek on 2016-01-02a
  */
 public class GitLookerSQLiteOpenHelper extends SQLiteOpenHelper {
   public static final String TABLE_REPO = "repo";
@@ -14,7 +14,7 @@ public class GitLookerSQLiteOpenHelper extends SQLiteOpenHelper {
   public static final String TABLE_SEARCH = "search";
 
   private static final String DATABASE_NAME = "gl.db";
-  private static final int DATABASE_VERSION = 6;
+  private static final int DATABASE_VERSION = 7;
 
   public GitLookerSQLiteOpenHelper(Context context)
   {

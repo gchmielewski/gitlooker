@@ -42,11 +42,13 @@ public class MainActivity extends AppCompatActivity implements ReposFragment.OnL
         //Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         //setSupportActionBar(myToolbar);
 
-        if (getSupportFragmentManager().findFragmentByTag(LOGIN_TAG) == null) {
+        if (savedInstanceState == null) {
+            if (getSupportFragmentManager().findFragmentByTag(LOGIN_TAG) == null) {
 
-            final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.fragment_container, new LoginFragment(), LOGIN_TAG);
-            ft.commit();
+                final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment_container, new LoginFragment(), LOGIN_TAG);
+                ft.commit();
+            }
         }
     }
 
@@ -124,6 +126,8 @@ public class MainActivity extends AppCompatActivity implements ReposFragment.OnL
             @Override public void onFailure(Throwable t) {
                 progressDialog.dismiss();
             }
+
+
         });
 
     }
